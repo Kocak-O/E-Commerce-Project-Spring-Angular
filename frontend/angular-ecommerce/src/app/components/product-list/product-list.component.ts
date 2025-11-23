@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-product-list',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './product-list.component.html',
+  templateUrl: './product-list-grid.component.html',
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {

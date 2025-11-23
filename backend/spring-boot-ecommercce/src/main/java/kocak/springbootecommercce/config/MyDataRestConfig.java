@@ -1,3 +1,5 @@
+package kocak.springbootecommercce.config;
+
 import kocak.springbootecommercce.entity.Product;
 import kocak.springbootecommercce.entity.ProductCategory;
 import org.springframework.context.annotation.Configuration;
