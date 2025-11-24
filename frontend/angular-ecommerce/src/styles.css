@@ -972,3 +972,10 @@ footer ul li{
         padding:8px 0
     }
 }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 20px;
+}
