@@ -1,2 +1,2 @@
 # Spring-Angular-ECommerceProject
-Just a simple E-Commerce Project to get more Familiar with Spring Security
+Just a simple E-Commerce Project to get more Familiar with Spring Security and Session ID
