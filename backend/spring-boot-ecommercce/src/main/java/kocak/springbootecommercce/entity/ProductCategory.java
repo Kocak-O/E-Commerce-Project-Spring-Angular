@@ -2,14 +2,16 @@ package kocak.springbootecommercce.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Set;
 
 @Entity
-@Table(name = "product_category")
-@Getter
-@Setter
+@Table(name = "productcategory")
+@ToString
+@RequiredArgsConstructor
 public class ProductCategory {
 
     @Id
