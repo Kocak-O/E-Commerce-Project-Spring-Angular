@@ -9,7 +9,7 @@
                             <h1>{{tempProduct.name}}</h1>
                             </a>
                             <div class="price">{{tempProduct.unit_price | currency:'EUR'}}</div>
-                            <a href="#" class="primary-btn">Add to card</a>
+                            <button (click)="addToCart(tempProduct)" href="#" class="btn btn-primary btn-sm">Add to card</button>
                         </div>
                     </div>
                 <!-- if products is empty show message -->

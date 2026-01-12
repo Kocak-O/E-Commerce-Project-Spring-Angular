@@ -10,6 +10,9 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
   styleUrl: './product-details.component.css'
 })
 export class ProductDetailsComponent {
+addToCart(arg0: Product) {
+throw new Error('Method not implemented.');
+}
 
   product!: Product;
 

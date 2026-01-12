@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Route } from '@angular/router';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { CartItem } from '../../common/cart-item';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -26,7 +28,8 @@ export class ProductListComponent {
   theTotalElements: number = 0;
 
   constructor(private productService: ProductService, 
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private cartService: CartService
   ){
 
   }
@@ -87,6 +90,11 @@ export class ProductListComponent {
       }
     );
 
+  }
+  // need to be implemented
+  addToCart(product: Product) {
+    const theCartItem = new CartItem(product);
+    this.cartService.addToCart(theCartItem);
   }
 
 
