@@ -17,6 +17,32 @@
                     No products found with given keywoard.
                  </div>
             </div>
+
+            <!-- pagination component -->
+            <div class="footer-pagination">
+                <div class="row">
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row mt-4">
+                            <div class="col-12 d-flex justify-content-center">
+                                <ngb-pagination
+                                [(page)]="thePageNumber"
+                                [pageSize]="thePageSize"
+                                [collectionSize]="theTotalElements"
+                                [maxSize]="5"
+                                [boundaryLinks]="true"
+                                [directionLinks]="true"
+                                [rotate]="true"
+                                size="sm"
+                                (pageChange)="listProducts()">
+                            </ngb-pagination>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,3 +1,5 @@
+ @import "bootstrap/dist/css/bootstrap.min.css";
+ 
  *{
     margin:0;
     padding:0;
@@ -979,4 +981,23 @@ footer ul li{
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   padding: 20px;
+}
+
+ngb-pagination .page-link {
+  color: #0d6efd;
+  border-radius: 6px;
+}
+
+ngb-pagination .page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: #fff;
+}
+
+ngb-pagination .page-item.disabled .page-link {
+  color: #adb5bd;
+}
+
+ngb-pagination .page-item {
+  margin: 0 3px;
 }
