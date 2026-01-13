@@ -91,7 +91,7 @@ export class ProductListComponent {
     );
 
   }
-  // need to be implemented
+  
   addToCart(product: Product) {
     const theCartItem = new CartItem(product);
     this.cartService.addToCart(theCartItem);

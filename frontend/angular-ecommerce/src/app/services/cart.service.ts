@@ -17,24 +17,16 @@ export class CartService {
 
   addToCart(theCartItem: CartItem){
     //check if item already exists, if yes increment quantity
-    let alreadyExists:boolean = false;
-    let existingCartItem: CartItem = undefined!;
+    const existingCartItem = this.cartItems.find(
+      tempCartItem => tempCartItem.id === theCartItem.id
+    );
 
-    if(this.cartItems.length > 0){
-      for(let tempItem of this.cartItems){
-        if(tempItem.id === theCartItem.id){
-          existingCartItem = tempItem;
-          break;
-        }
-      }
-    }
-    alreadyExists = (existingCartItem != undefined);
-
-    if(alreadyExists){
+    if (existingCartItem) {
       existingCartItem.quantity++;
-    }else{
+    } else {
       this.cartItems.push(theCartItem);
     }
+
     this.computeCartTotals();
   }
 

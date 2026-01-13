@@ -1,0 +1,33 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <table class="table table-bordered">
+                <tr>
+                    <th width="80%">Product Detail</th>
+                    <th width="20%"></th>
+                </tr>
+                <tr *ngFor="let tempCartItem of cartItems">
+                    <td>
+                        <p>{{ tempCartItem.name }}</p>
+                        <p>{{ tempCartItem.unitPrice | currency: 'EUR' }}</p>
+                    </td>
+                    <td>
+                        <div class="items">
+                            <label>Quantity:</label> {{tempCartItem.quantity}}
+                        </div>
+
+                        <p class="mt-2">Subtotal: {{ tempCartItem.quantity * tempCartItem.unitPrice | currency: 'EUR'}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1"></td>
+                    <td style="font-weight: bold;">
+                        <p>Total Quantity: {{ totalQuantity }}</p>
+                        <p>Total Price: {{totalPrice | currency: 'EUR'}}</p>
+                        <a routerLink="/checkout" class="btn btn-primary" style="background-color: blue;">Checkout</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
