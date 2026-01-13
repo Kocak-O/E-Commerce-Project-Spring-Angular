@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ReactiveFormsModule } from '@angular/forms';
 import { ShopFormService } from '../../services/shop-form.service';
 import { NgFor, NgIf } from '@angular/common';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -20,12 +21,16 @@ export class CheckoutComponent {
 
 
   constructor(private formBuilder: FormBuilder,
-    private shopFormService: ShopFormService
+    private shopFormService: ShopFormService,
+    private cartService: CartService
   ){
 
   }
 
   ngOnInit(): void{
+
+    this.reviewCartDetails();
+
     this.checkoutFormGroup = this.formBuilder.group({
       customer: this.formBuilder.group({
         'firstName': new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -67,6 +72,16 @@ export class CheckoutComponent {
     );
 
   }
+
+  reviewCartDetails() {
+    this.cartService.totalPrice.subscribe(
+      data => this.totalPrice = data
+    );
+    this.cartService.totalQuantity.subscribe(
+      data => this.totalQuantity = data
+    );
+  }
+
   get firstName(){
     return this.checkoutFormGroup.get('customer.firstName');
   }
