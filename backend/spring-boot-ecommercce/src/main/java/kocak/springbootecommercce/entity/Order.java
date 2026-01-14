@@ -58,4 +58,16 @@ public class Order {
             item.setOrder(this);
         }
     }
+
+    public void setOrderTrackingNumber(String orderTrackingNumber) {
+        this.orderTrackingNumber = orderTrackingNumber;
+    }
+
+    public void setShippingAddress(Address shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+    public void setBillingAddress(Address billingAddress) {
+        this.billingAddress = billingAddress;
+    }
 }
