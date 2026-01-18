@@ -1,13 +1,15 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject } from '@angular/core';
+import { DOCUMENT, NgIf } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-login-status',
   templateUrl: './login-status.component.html',
-  styleUrl: './login-status.component.css'
+  styleUrl: './login-status.component.css',
+  imports: [NgIf, RouterLink]
 })
-export class LoginStatusComponent {
+export class LoginStatusComponent implements OnInit {
   isAuthenticated: boolean = false;
   profileJson: string | undefined;
   userEmail: string | undefined;
@@ -33,4 +35,6 @@ export class LoginStatusComponent {
   logout(): void {
     this.auth.logout({ logoutParams: { returnTo: this.doc.location.origin } });
   }
+
+
 }
