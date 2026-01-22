@@ -10,9 +10,11 @@ export class CartService {
   cartItems: CartItem[] = [];
   totalPrice: Subject<number> = new BehaviorSubject<number>(0);
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
+  storage: Storage = sessionStorage;
 
   constructor() { 
-
+    this.cartItems = JSON.parse(this.storage.getItem('cartItems') || '[]');
+    this.computeCartTotals();
   }
 
   addToCart(theCartItem: CartItem){

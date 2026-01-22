@@ -8,7 +8,6 @@ import { OktaAuth } from '@okta/okta-auth-js';
 import { OKTA_AUTH } from '@okta/okta-angular';
 import myAppConfig from './app/config/my-app-config';
 
-// OktaAuth Instanz erstellen
 const oktaAuth = new OktaAuth(myAppConfig.oidc);
 
 bootstrapApplication(AppComponent, {
